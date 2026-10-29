@@ -81,6 +81,7 @@ $("guess").addEventListener("keydown", e => { if (e.key === "Enter") submitGuess
 async function start() {
   const res = await fetch("/api/words");
   words = await res.json();
+  loadBoard();
   nextWord();
 }
 start();

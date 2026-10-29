@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Database: creates game.db automatically if it doesn't exist
-const db = new Database("game.db");
+const db = new Database(process.env.DB_PATH || "game.db");
 db.exec(`
   CREATE TABLE IF NOT EXISTS scores (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -36,4 +36,5 @@ app.get("/api/leaderboard", (req, res) => {
   res.json(rows);
 });
 
-app.listen(3000, () => console.log("Running at http://localhost:3000"));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, "0.0.0.0", () => console.log(`Running at http://localhost:${PORT}`));
