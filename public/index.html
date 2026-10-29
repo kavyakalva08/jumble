@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Jumble</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Jumble</h1>
+    <p id="status">Round 1 of 5 · Points: 0</p>
+    <h2 id="jumbled"></h2>
+    <input id="guess" placeholder="Your guess" maxlength="5" autocomplete="off">
+    <button id="submit">Guess</button>
+    <p id="message"></p>
+    <div id="end" hidden>
+      <input id="name" placeholder="Your name" maxlength="20">
+      <button id="save">Save score</button>
+    </div>
+    <h3>Leaderboard</h3>
+    <ol id="board"></ol>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
